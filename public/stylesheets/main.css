@@ -1,0 +1,385 @@
+body, html{
+  height:100%;
+  margin:0;
+  font-size:16px;
+  font-family:"Lato", sans-serif;
+  font-weight:400;
+  line-height:1.8em;
+  color:#666;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background: #282e34;
+  opacity: 0.7;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0 1rem;
+  padding: 0rem;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #f4f4f4;
+}
+
+.navbar ul li a:hover {
+  color: skyblue;
+}
+
+.pimg1, .pimg2, .pimg3{
+  position:relative;
+  opacity:0.70;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+
+.pimg1{
+  background-image:url('../images/fancy-table.jpg');
+  min-height:100%;
+}
+
+.pimg2{
+  background-image:url('../images/bar.jpg');
+  min-height:400px;
+}
+
+.pimg3{
+  background-image:url('../images/workers.jpg');
+  min-height:400px;
+}
+
+.section{
+  text-align:center;
+  padding:50px 80px;
+}
+
+.section-light{
+  background-color:#f4f4f4;
+  background-size: cover;
+  color:#666;
+}
+
+.section-dark{
+  background-color:#282e34;
+  background-size: cover;
+  color:#ddd;
+}
+
+.ptext{
+  position:absolute;
+  top:50%;
+  min-width:100%;
+  max-width: 100%;
+  text-align:center;
+  color:#000;
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform:uppercase;
+}
+
+.ptext .border{
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+
+}
+
+.ptext .border.trans{ 
+   background-color:transparent; 
+ } 
+
+.pimg1 .ptext .title {
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+
+ .grid-3 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#bio {
+    text-align: left;
+  
+}
+
+#bio-pic img{
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  padding-top: 25px;
+}
+
+
+#copyright {
+    position:absolute;
+    bottom: 0;
+    width:100%;
+    text-align:center;
+    color:#000;
+}
+
+#industries {
+  border: 10px solid #666;
+}
+
+#contacts {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  
+}
+
+.email-icon{
+  max-height: 60px;
+  max-width: 80px;
+  padding-top: 20px;
+}
+
+.telephone-icon{
+    max-height: 80px;
+    max-width: 80px;
+}
+
+.logo-contact{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: 100px;
+    width: 100px;
+
+}
+
+#logo-name{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.submit-button img{
+   width: 5%;
+}
+
+.submit-button{
+    background-color: #666;
+    box-shadow: black;
+    color: #fff;
+    width: 75%;
+    height: 2em;
+    font-size:3vh;
+    font-weight:600;
+    margin: 0;
+}
+
+div#postings a{
+  color: #282e34;
+  text-decoration: none;
+}
+
+.job-button{
+  color: #282e34;
+}
+ 
+
+input[type=text] {
+    width: 75%;
+    padding-bottom: .25em;
+}
+
+
+
+#message-area {
+  width: 75%;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+#telephone {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#email-link {
+  text-decoration: none;
+  color: #666;
+}
+
+#contacts {
+border: 10px solid #666;
+padding-top: 40px;
+}
+
+#current-openings {
+text-align: left;
+}
+
+
+
+
+
+/* IPAD scroll */
+@media (max-width: 1100px) {
+
+.pimg1, .pimg2, .pimg3{
+  background-attachment:scroll;
+}
+
+}
+
+
+
+/* Small Screens */
+
+
+
+
+@media (max-width: 900px) {
+
+  .pimg1, .pimg2, .pimg3{
+    background-attachment:scroll;
+  }
+  
+  .grid-2 {
+    grid: none;
+  }
+
+  .services div {
+    border-bottom: #333 dashed 1px;
+    padding: 1.2rem 1rem;
+
+  }
+
+  .title {
+    font-size: 21px;
+    letter-spacing: 4px;
+  }
+
+  .ptext .border.trans{ 
+    font-size: 21px;
+    letter-spacing: 4px; 
+  }
+  
+  #logo-name{
+    width: 100%;
+  }
+
+  #contacts {
+    display: inline;
+  }
+
+  #email{
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  
+  #contact-area {
+    margin-top: 20px;
+  }
+
+  .email-icon{
+    max-height: 80px;
+    max-width: 80px;
+  }
+
+  .telephone-icon{
+      max-height: 80px;
+      max-width: 80px;
+  }
+
+  .submit-button{
+    background-color: #666;
+    box-shadow: black;
+    width: 75%;
+    height: 3em;
+    font-size:3vh;
+    font-weight:400;
+    margin: 0;
+}
+
+#contacts {
+  border: none;
+}
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .pimg1, .pimg2, .pimg3{
+    background-attachment:scroll;
+  }
+
+  .title{
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .ptext .border.trans{ 
+    font-size: 13px;
+    letter-spacing: 2px; 
+  } 
+
+  .submit-button{
+    background-color: #666;
+    box-shadow: black;
+    width: 75%;
+    height: 3em;
+    font-size:2vh;
+    font-weight:400;
+    margin: 0;
+  }
+
+  .navbar ul li {
+  margin-left: .5rem;  
+  }
+
+  .navbar ul {
+  margin-left: 0;
+  padding-left: 0;
+  }
+
+  input[type=text] {
+    width: 100%;
+    padding-bottom: .25em;
+}
+
+#message-area {
+  width: 100%;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+}

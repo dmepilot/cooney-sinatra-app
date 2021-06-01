@@ -1,0 +1,31 @@
+<h1>Manage Job Postings</h1>
+
+ <h2>Your Current Listings:</h2><br>
+<ul>
+ <%@postings.each do |p|%>
+
+ <li><strong><%=p.title%></strong> <%=p.location%>  <button class="button-2"><a href="/postings/<%="#{p.id}"%>/edit">Edit Posting</a></button> 
+<form action="/postings/<%="#{p.id}"%>/delete" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <button type="submit" class="button-2">Delete Posting</button>
+  </form>
+</li> 
+ <p>Details: <%=p.details%></p>
+ <%end%>
+ </ul>
+
+
+<h1>Add a job posting:</h1>
+
+<form action="/postings/new" method="post">
+<label for="posting[title]">Title:</label>
+<input type="text" name="posting[title]"><br>
+<label for="posting[location]">Location:</label>
+<input type="text" name="posting[location]"><br>
+<label for="posting[details]">Details:</label><br>
+<textarea name="posting[details]" rows="6" cols="80">  Please enter any details here...</textarea><br>
+<button type="submit" class="button-2">SUBMIT</button>
+</form>
+<br>
+<br>
+<a href="/logout" class="button" >LOGOUT</a>

@@ -1,0 +1,200 @@
+<!--
+<div class="container">
+  <header><img src="images/corneal-small.png" class="img-responsive main-image"></header>
+  <div class="col-md-8 col-md-offset-2">
+    <h2>Sinatra Template Default Page</h2>
+
+    <div class="content">
+      <p>Welcome to the Sinatra Template! If you're seeing this page, then everything is working
+      as expected. To get started, delete this file (<code>app/views/welcome.erb)</code> and begin adding
+      your own actions to <code>application_controller.rb</code>. For more information, see the <a href="https://github.com/thebrianemory/corneal">README</a>.</p>
+    </div>
+
+    <div class="sidebar">
+      <h3>Environment</h3>
+      <ul>
+        <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
+        <li><b>Environment:</b> <%= ENV["RACK_ENV"] %></li>
+        <li><b>Server:</b> <%= @env["SERVER_SOFTWARE"] %></li>
+        <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="Denver Consulting, Denver Recruiting, Cooney, jobs, restaurant jobs",>
+  <title>Cooney Consulting & Recruiting</title>
+  <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#openings">Openings</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id ="home"></section>
+
+    <div class="pimg1">
+        <div class="ptext">
+            <span class="title">
+                Cooney Consulting & Recruiting 
+            </span>
+        </div>
+    </div>
+
+
+    <section id="about">
+      <section class="section section-dark">
+       <h2>About</h2>
+         <div class="grid-2">
+           <div id="bio-pic">
+             <img src="./images/Headshot.JPG" alt="Manager">
+            </div>
+            <div id ="bio">
+              <h2>Founder and CEO for Cooney Consulting & Recruiting</h2>  
+                  <p>Cathy brings more than 25 years’ experience in hospitality from direct restaurant management to training and recruiting. A true ‘lifetime restaurateur,’ she grew up in the business as her parents owned multiple restaurant concepts in Breckenridge, Colorado.</p> 
+                  <p>Cathy went on to earn her bachelor’s degree in Hotel & Restaurant Management from the University of Denver and was recruited right out of college by The Palm. With this legendary brand, she grew her career for over 20 years on the management teams of high-profile restaurants in multiple cities including Boston, Dallas and London. In 2007, the opportunity to take over The Palm’s location in her home city of Denver arose, and she returned to lead the iconic restaurant for over 12 years.</p> 
+                  <p>Cathy then moved to serving as General Manager of The One Group’s STK Restaurant in Denver, Cathy increased sales and quickly became the training store for the company, where she trained all new managers from around the country.                   </p>
+                  <p>Cathy then had the opportunity to go into recruiting with TaletServed.  She learned that identifying the right leaders for critical openings is an art form, and lucky for her clients, it’s one that she has learned to do well. Cathy learned to engage the latest recruiting technologies and proven methodologies to connect the right talent with the right organizations. Cathy then decided to start Cooney Consulting & Recruiting.  She brings her love and passion for the industry to help serve all her clients.</p>
+                  <p>A ‘master networker,’ she knows no strangers in the Denver market and surrounding major metropolitan areas. She currently serves on the Boards of the Department of Public Health and Environment for the City of Denver, as well as the Colorado Restaurant Association Board and served 4 years as the President for the CRA’s Mile High Chapter. </p>
+              <h2>CC&R specialize in finding talent for:</h2>
+                  <ul>
+                    <li>National Restaurant Groups</li>
+                    <li>Emerging Brands</li>
+                    <li>Independent Restaurant Owners</li>
+                    <li>Casinos</li>
+                    <li>Cruise Lines</li>
+                    <li>Cutting-Edge Hotels</li>
+                    <li>Wineries</li>
+                  </ul>
+              <h2>CC&R specialize in placing exceptional:</h2> 
+                  <ul>
+                    <li>C-Level Officers</li>
+                    <li>Executive Level Leaders</li>
+                    <li>Corporate Support Staff</li>
+                    <li>Multi-Unit Leaders</li>
+                    <li>General Managers</li>
+                    <li>Executive Chefs</li>
+                    <li>Service Managers</li>
+                  </ul>
+    
+            </div>
+        </div>
+       </section>
+    </section>
+
+  <div class="pimg2">
+    <div class="ptext">
+      <span class="border trans">
+        Experienced Industry Consulting
+      </span>
+    </div>
+  </div>
+
+  <section id="openings">
+    <section class="section section-light">
+      <div id="industries">
+      <h2>Industries Served</h2>
+       <div>
+          Restaurants | Hotels/Resorts | Casino's | Clubs | Wineries | Breweries | Senior Living | Retail | Transportation | Management | Executive Chefs | Accounting | Human Resources | Sales and Marketing | IT
+       </div>
+      </div>
+      <div id="postings">
+      <h3>Current Openings</h3>
+       <ul id="current-openings">
+       <%Posting.all.each do |p|%>
+       <li><a href="/postings/<%="#{p.id}"%>" target="_blank" class="details-link"><h3></h3><%=p.title%> - <%=p.location%> - </h3><button class = "job-button">Details</button> </a></li>
+      <%end%>
+       </ul>
+       </div>
+
+       
+    </section>
+ </section>
+
+
+  <div class="pimg3">
+    <div class="ptext">
+      <span class="border trans">
+        Extensive Network
+      </span>
+    </div>
+  </div>
+
+  <section id="contact">
+      <section class="section section-light">
+          <h2>Contact</h2>
+          <div id="logos">
+          <img src="./images/CooneyLogo.png" class="logo-contact">
+          <!-- <img src="./images/CooneyVerbiageNoBkgrd.png" id="logo-name"> -->
+          <h3 class="w3-center"><em>I'd love to hear from you!</em></h3>
+          </div>
+        
+            <div id="contacts">   
+            <div  id="contact-box">
+                        <form method="POST" action="https://formspree.io/f/xleobwlk" target="_blank">
+                          <div>
+                            <div id="input-form">
+                              <input class="input-border" type="text" placeholder="Name" required name="name">
+                            </div>
+                            <div>
+                              <input class="input-border" type="text" placeholder="Email" required name="email">
+                            </div>
+                          </div>
+                          <textarea id = "message-area" type= "textarea" rows="10" placeholder="Message" required name="message"></textarea>
+                          <button class="submit-button" type="submit">
+                            <img src="./images/Airplane-Icon.png"></img>
+                             SEND MESSAGE
+                          </button>
+                        </form>
+                      </div>
+                
+
+              <div id= "contact-area">
+                <div id="email">
+                  <a href = "mailto: cathy@cooneycr.com"><img src="./images/Email-Logo.png" class="email-icon" alt="email"> </a>
+                  <a href = "mailto: cathy@cooneycr.com" id ="email-link"><h3>EMAIL: CATHY@COONEYCR.COM</h3></a>
+                </div>
+                <div id="telephone">
+                <img src="./images/Telephone-Icon.png" class="telephone-icon" alt="telephone">
+                  <h3>PHONE: (303) 881-6083</h3>
+                </div>
+              </div>
+            </div>
+        
+          
+
+
+      </section>
+  </section>
+
+
+  <div class="pimg1">
+    <div class="ptext">
+      <span class="title">
+        Cooney Consulting & Recruiting 
+      </span>
+    </div>
+        <div id="copyright">
+            <h4>
+             Cooney Consulting & Recruiting &copy; 2021
+            </h4>
+       </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
