@@ -2,6 +2,10 @@
 <h3 style="color:green;"><%=flash[:success]%></h3>
 <%end%>
 
+<%if flash[:updated]%>
+<h3 style="color:green;"><%=flash[:updated]%></h3>
+<%end%>
+
 
 
 <!DOCTYPE html>
@@ -33,16 +37,44 @@
         display: inline-block;
         font-size: 16px;
       }
+
+      .manager-buttons a{
+        text-decoration: none;
+        color: white;
+      }
+
+      li.posting-buttons * {
+        display: inline-block;
+      }
+
+      li.posting-buttons button {
+        background-color: grey; 
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 12px;
+      }
+
+      li.posting-buttons a {
+        color: white;
+        text-decoration: none;
+      }
+
     </style>
 </head>
 <body>
-<h1>Manage Job Postings</h1>
-  <a href="/logout" class="logout-button" >LOGOUT</a>
+<h1>Welcome, <%=current_user.username%>! Manage Job Postings</h1>
+<div class="manager-buttons">
+  <a href="/logout" class="logout-button" >LOGOUT</a> <button class="submit-button"> <a href="/users/<%="#{current_user.slug}"%>/edit">Update Profile Info/Password</a></button> <button class="submit-button"> <a href="/users/new">Add New Manager</a></button>
+</div>
+
  <h2>Your Current Listings:</h2><br>
 <ul>
  <%@postings.each do |p|%>
 
- <li><strong><%=p.title%></strong> <%=p.location%>  <button class="button-2"><a href="/postings/<%="#{p.id}"%>/edit">Edit Posting</a></button> 
+ <li class = "posting-buttons"><strong><%=p.title%></strong> <%=p.location%>  <button class="button-2"><a href="/postings/<%="#{p.id}"%>/edit">Edit Posting</a></button> 
 <form action="/postings/<%="#{p.id}"%>/delete" method="POST">
   <input type="hidden" name="_method" value="DELETE">
   <button type="submit" class="delete-button">Delete Posting</button>

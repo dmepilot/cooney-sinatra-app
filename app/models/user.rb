@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
     has_secure_password
+    validates :username, presence: true 
+
 
     def slug
         self.username.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
