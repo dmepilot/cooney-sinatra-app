@@ -103,14 +103,15 @@
 
   <section id="openings">
     <section class="section section-light">
+      <h2>Current Openings</h2>
       <div id="industries">
-      <h2>Industries Served</h2>
+      <%# <h2>Industries Served</h2>
        <div>
           Restaurants | Hotels/Resorts | Casino's | Clubs | Wineries | Breweries | Senior Living | Retail | Transportation | Management | Executive Chefs | Accounting | Human Resources | Sales and Marketing | IT
        </div>
-      </div>
+      </div> %>
+      
       <div id="postings">
-      <h3>Current Openings</h3>
        <ul id="current-openings">
        <%Posting.all.each do |p|%>
        <li><a href="/postings/<%="#{p.id}"%>" target="_blank" class="details-link"><h3></h3><%=p.title%> - <%=p.location%> - </h3><button class = "job-button">Details</button> </a></li>

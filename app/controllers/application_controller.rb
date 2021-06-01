@@ -4,10 +4,8 @@ class ApplicationController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
   enable :sessions
   set :session_secret, "demo_test"
-
-
+  register Sinatra::Flash
   set :views, Proc.new { File.join(root, "../views/") }
-  # register Sinatra::Flash
 
   configure do
     set :public_folder, 'public'

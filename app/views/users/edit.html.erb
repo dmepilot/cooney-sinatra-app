@@ -1,0 +1,9 @@
+<form action="/users/<%=current_user.slug%>" method="POST">
+<input type="hidden" name="_method" value="PATCH">
+<label for="username" >Username:</label>
+<input type="text" value ="<%=current_user.username%>" name="user[username]"><br>
+<label for="password">Password:</label>
+<input type="password" name="user[password]" value ="<%=current_user.password%>"><br>
+<br>
+
+<button type="submit" name="submit" class="button-2">Update</button>

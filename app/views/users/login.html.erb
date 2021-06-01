@@ -1,3 +1,7 @@
+<%if flash[:error]%>
+<h3 style="color:red;"><%=flash[:error]%></h3>
+<%end%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +12,9 @@
     <link rel="stylesheet" href="/stylesheets/login.css">
 </head>
 <body>
+
+
+
 
     <div class="login-box">
         <h1>CCR Manager Login:</h1>

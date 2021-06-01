@@ -1,5 +1,43 @@
-<h1>Manage Job Postings</h1>
+<%if flash[:success]%>
+<h3 style="color:green;"><%=flash[:success]%></h3>
+<%end%>
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooney Consulting & Recruiting</title>
+    <style>
+      .logout-button {
+        background-color: #f44336; 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+      .submit-button {
+        background-color: #008CBA; 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+    </style>
+</head>
+<body>
+<h1>Manage Job Postings</h1>
+  <a href="/logout" class="logout-button" >LOGOUT</a>
  <h2>Your Current Listings:</h2><br>
 <ul>
  <%@postings.each do |p|%>
@@ -7,7 +45,7 @@
  <li><strong><%=p.title%></strong> <%=p.location%>  <button class="button-2"><a href="/postings/<%="#{p.id}"%>/edit">Edit Posting</a></button> 
 <form action="/postings/<%="#{p.id}"%>/delete" method="POST">
   <input type="hidden" name="_method" value="DELETE">
-  <button type="submit" class="button-2">Delete Posting</button>
+  <button type="submit" class="delete-button">Delete Posting</button>
   </form>
 </li> 
  <p>Details: <%=p.details%></p>
@@ -24,8 +62,15 @@
 <input type="text" name="posting[location]"><br>
 <label for="posting[details]">Details:</label><br>
 <textarea name="posting[details]" rows="6" cols="80">  Please enter any details here...</textarea><br>
-<button type="submit" class="button-2">SUBMIT</button>
+<button type="submit" class="submit-button">SUBMIT</button>
 </form>
 <br>
 <br>
-<a href="/logout" class="button" >LOGOUT</a>
+
+
+
+  
+</body>
+</html>
+
+
