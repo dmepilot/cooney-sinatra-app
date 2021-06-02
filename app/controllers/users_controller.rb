@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         @user=User.find_by(:username => params[:username])
         if @user && @user.authenticate(params[:password])
             session[:user_id]=@user.id
-            flash[:success]="Successfully signed in as #{user.username}."
+            flash[:success]="Successfully signed in as #{current_user.username}."
             redirect to("/postings")
 
         else
@@ -19,7 +19,11 @@ class UsersController < ApplicationController
     end
 
     get '/users/new' do
-        erb :'/users/new.html'
+        if logged_in?
+            erb :'/users/new.html'
+          else
+            redirect to '/'
+        end
     end
 
     post '/users/new' do
@@ -40,8 +44,13 @@ class UsersController < ApplicationController
     end
 
     get '/users/:slug/edit' do
-        @user=User.find_by_slug(params[:slug])
-        erb :'/users/edit.html'
+        if logged_in?
+            @user=User.find_by_slug(params[:slug])
+            erb :'/users/edit.html'
+          else
+            redirect to '/'
+        end
+
     end
 
     patch '/users/:slug' do

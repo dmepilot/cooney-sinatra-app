@@ -12,7 +12,7 @@ class PostingsController < ApplicationController
 
   # GET: /postings/new
   get "/postings/new" do
-    erb :"/postings/new.html"
+    redirect "/"
   end
 
   # POST: /postings
@@ -37,8 +37,12 @@ class PostingsController < ApplicationController
 
   # GET: /postings/5/edit
   get "/postings/:id/edit" do
-    @posting = Posting.find_by_id(params[:id])
-    erb :"/postings/edit.html"
+    if logged_in?
+      @posting = Posting.find_by_id(params[:id])
+      erb :"/postings/edit.html"      
+    else
+      redirect to '/'
+    end
   end
 
   # PATCH: /postings/5
