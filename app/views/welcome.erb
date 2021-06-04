@@ -114,8 +114,16 @@
       <div id="postings">
        <ul id="current-openings">
        <%Posting.all.each do |p|%>
-       <li><a href="/postings/<%="#{p.id}"%>" target="_blank" class="details-link"><h3></h3><%=p.title%> - <%=p.location%> - </h3><button class = "job-button">Details</button> </a></li>
+      <div class="test">
+       <li class = "job-posting">
+       <h3><%=p.title%> - <%=p.location%> - </h3>
+       <%if p.details != ""%>
+       <a href="/postings/<%="#{p.id}"%>" target="_blank" class = "links"> <button class = "job-button">Details</button></a>
+       <%end%>
+       </li>
+      </div>
       <%end%>
+      
        </ul>
        </div>
 

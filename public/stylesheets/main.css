@@ -204,15 +204,45 @@ body, html{
     margin: 0;
 }
 
-div#postings a{
+/* div#postings a{
   color: #282e34;
   text-decoration: none;
+
+} */
+
+/* div#postings a{
+  background-color: #282e34; 
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 8px;
+} */
+ 
+section#openings section.section.section-light div#industries div#postings div#current-openings ul li.job-posting a.links{
+  display: inline-block;
+  color: red;
 }
 
-.job-button{
-  color: #282e34;
+.test {
+  text-align: left;
 }
- 
+.test button {
+  background-color: #282e34; 
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.test h3, a {
+display: inline-block;
+}
 
 input[type=text] {
     width: 75%;
@@ -241,10 +271,10 @@ input[type=text] {
 border: 10px solid #666;
 padding-top: 40px;
 }
-
+/* 
 #current-openings {
 text-align: left;
-}
+} */
 
 
 

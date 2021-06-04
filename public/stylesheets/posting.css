@@ -5,7 +5,7 @@ body, html{
     font-family:"Lato", sans-serif;
     font-weight:400;
     line-height:1.8em;
-    color: black;
+    color:black;
     background-image:url('../images/fancy-table-opaque.jpg') ;
     background-position:center;
     background-size:cover;
@@ -43,16 +43,16 @@ body, html{
         padding-left: 1em;
         } 
   
-  span.title {
+/* .job-card .title {
     position:relative;
     font-size: 27px;
     letter-spacing: 8px;
     text-transform:uppercase;
     width: 100;
     background-color:#111;
-    color:#fff;
+    color: #fff;
     padding:20px;
-  } 
+  }  */
 
   div.job-contact {
     position: relative;
@@ -92,6 +92,58 @@ body, html{
 
   a.email {
     text-decoration: none;
+  }
+
+  /* IPAD scroll */
+@media (max-width: 1100px) {
+
+    body, html{
+      background-attachment:scroll;
+    }
+    
+    }
+
+    /* Small Screens */
+
+
+
+
+@media (max-width: 1000px) {
+
+    body, html{
+      background-attachment:scroll;
+    }
+    
+    div.job-card span.title {
+        position:relative;
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform:uppercase;
+        width: 100%;
+        background-color:#111;
+        color:red;
+        padding:20px;
+    } 
+  
+    
+ 
+  
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+  
+    body, html{
+      background-attachment:scroll;
+    }
+  
+    .title{
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+  
+
+  
   }
 
 
