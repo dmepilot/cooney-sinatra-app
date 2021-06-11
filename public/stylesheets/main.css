@@ -221,10 +221,10 @@ body, html{
   font-size: 8px;
 } */
  
-section#openings section.section.section-light div#industries div#postings div#current-openings ul li.job-posting a.links{
+/* section#openings section.section.section-light div#industries div#postings div#current-openings ul li.job-posting a.links{
   display: inline-block;
   color: red;
-}
+} */
 
 .test {
   text-align: left;
@@ -232,6 +232,7 @@ section#openings section.section.section-light div#industries div#postings div#c
 .test button {
   background-color: #282e34; 
   border: none;
+  border-radius: 12px;
   color: white;
   padding: 8px 12px;
   text-align: center;
